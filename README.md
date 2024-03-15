@@ -11,7 +11,7 @@ Intern Id: COD4561
 The task assigned to Kolavanti Tejaswi during the CodTech IT Solutions Internship program is to Create a TO -DO LIST WEB PAGE using HTML,CSS,JAVASCRIPT
 
 **Implementation**
-**HTML:**
+```**HTML:**
 <!DOCTYPE html>
 <html>
 
@@ -222,7 +222,8 @@ add_input.onclick = function() {
 }
 for (let each of todos_list) {
     appending(each)
-}
+ }
+```
 
 **CODE EXPLANATION**
 
