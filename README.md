@@ -21,11 +21,12 @@ The task assigned to Kolavanti Tejaswi during the CodTech IT Solutions Internshi
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/e9264497ac.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assignment.css">
 </head>
 
 <body>
     <div class="main-container">
-        <div class=container>
+        <div class="container first_half">
             <div class="row">
                 <div class="col-12">
                     <h1 class="text">Todos</h1>
@@ -41,17 +42,26 @@ The task assigned to Kolavanti Tejaswi during the CodTech IT Solutions Internshi
                 </div>
 
             </div>
+       
         </div>
+      
+       
+       
+   
+   
     </div>
+    <script src="assignment.js"></script>
 </body>
 
 </html>
 
 **CSS**
-
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
 
+.todos-container{
+    width:1000px;
+}
 .text {
     text-align: center;
     font-size: 60px;
@@ -67,10 +77,14 @@ The task assigned to Kolavanti Tejaswi during the CodTech IT Solutions Internshi
 .main-container {
     height: 100vh;
     width: 100vw;
+    display:flex;
+    flex-direction:row;
+    background-image: url("https://t3.ftcdn.net/jpg/01/28/87/04/240_F_128870437_TXj1QawSYdsDbmIy0KnIOv1ytIiiDOrX.jpg"); 
+    background-size:cover;
 }
 
 .inputelement {
-    width: 100%;
+    width: 60%;
     padding: 10px;
     border-radius: 4px;
 }
@@ -85,6 +99,8 @@ The task assigned to Kolavanti Tejaswi during the CodTech IT Solutions Internshi
 
 .todo_item_list {
     padding: 10px;
+    width:1000px;
+    margin-right:800px;
 }
 
 .label_container {
@@ -106,8 +122,24 @@ The task assigned to Kolavanti Tejaswi during the CodTech IT Solutions Internshi
 .checked {
     text-decoration: line-through;
 }
+.labelwidth{
+    width:500px;
+}
 
-**JAVASCRIPT:**
+.first_half{
+    width:800px;
+}
+.second_half{
+
+margin-right:1900px; 
+
+}
+.image_sizing{
+    height:500px;
+    width:500px;
+}
+
+**JAVASCRIPT**
 let todos_container = document.getElementById("todos_container");
 let add_input = document.getElementById("main_input")
 let new_input_item = document.getElementById("first_input")
@@ -161,6 +193,7 @@ function appending(each) {
     let input_element = document.createElement("input");
     input_element.id = checkbox_id;
     input_element.type = "checkbox";
+    
     element.appendChild(input_element);
     let label_container = document.createElement("div");
     label_container.classList.add("label_container", "d-flex", "flex-row");
@@ -169,6 +202,7 @@ function appending(each) {
     label_element.id = label_id;
     label_element.htmlFor = checkbox_id;
     label_element.textContent = each.text;
+    label_element.classList.add("labelwidth");
     input_element.onclick = function() {
         ontodo_change(checkbox_id, label_id, list_no);
     };
@@ -222,7 +256,7 @@ add_input.onclick = function() {
 }
 for (let each of todos_list) {
     appending(each)
- }
+}
 ```
 
 **CODE EXPLANATION**
